@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+        <link rel="stylesheet" href="styles.css" />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Shapes</title>
+    </head>
+    <body>
+
+        <div id="content" class="content">
+            <h1>Shapes</h1>  
+        
+            <div class="card">
+                <div class="card-header p-4 bg-dark text-white">
+                    <h2 class="m-0">Cylinder Volume</h2>          
+                </div>                
+                <div class="card-body p-5">      
+                    <div class="row align-items-center justify-content-start">
+                        <div class="col-lg-6 col-xl-4">
+                            <img src="cylinder.png" class="img-fluid" />
+                            <div class="p-4">
+                                <h4>Formula = &#x3C0; * r<sup>2</sup> * h</h4>
+                                <small class="text-muted"><em>Example = &#x3C0; * 4<sup>2</sup> * 10<br />Result = 502.655</em></small>
+                            </div>                            
+                        </div>
+                        <div class="col">
+                            <p class="mb-4">Use the fields provided to calculate the volume of a cylinder:</p> 
+                            <div class="form-group">
+                                <label for="cyl_input_radius">Radius</label>
+                                <input type="text" class="form-control" id="cyl_input_radius" />
+                            </div>
+                            <div class="form-group">
+                                <label for="cyl_input_height">Height</label>
+                                <input type="text" class="form-control" id="cyl_input_height" />
+                            </div>                    
+                            <input id="cyl_submit" type="button" value="Submit" class="mt-3 btn btn-primary" onclick="handleSubmissionCylinder()" />                            
+                            <div class="alert alert-info mt-3" id="cyl" style="display: none;"></div>                               
+                        </div>
+                    </div>                       
+                </div>  
+            </div>
+
+            <div class="card">
+                <div class="card-header bg-dark text-white">
+                    <h2 class="m-0">Cuboid Volume</h2>          
+                </div>                
+                <div class="card-body p-5">
+                    <div class="row align-items-center justify-content-start">
+                        <div class="col-lg-6 col-xl-4">
+                            <img src="cube.png" class="img-fluid" />
+                            <div class="p-4">
+                                <h4>Formula = l * w * h</h4>
+                                <small class="text-muted"><em>Example = 10 * 10 * 10<br />Result = 1000.000</em></small>
+                            </div>                            
+                        </div>
+                        <div class="col">
+                            <p class="mb-4">Use the fields provided to calculate the volume of a cuboid:</p> 
+                            <div class="form-group">
+                                <label for="cub_input_length">Length</label>
+                                <input type="text" class="form-control" id="cub_input_length" />
+                            </div>
+                            <div class="form-group">
+                                <label for="cub_input_width">Width</label>
+                                <input type="text" class="form-control" id="cub_input_width" />
+                            </div>                    
+                            <div class="form-group">
+                                <label for="cub_input_height">Height</label>
+                                <input type="text" class="form-control" id="cub_input_height" />
+                            </div>                    
+                            <input id="cub_submit" type="button" value="Submit" class="mt-3 btn btn-primary" onclick="handleSubmissionCuboid()" />
+                            <div class="alert alert-info mt-3" id="cub" style="display: none;"></div>                                  
+                        </div>
+                    </div>                  
+                </div>  
+            </div>
+
+            <div class="card">
+                <div class="card-header bg-dark text-white">
+                    <h2 class="m-0">Pyramid Volume</h2>          
+                </div>                
+                <div class="card-body p-5">
+                    <div class="row mb-4">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="pyramidChooser">Choose base type:</label>
+                                <select class="form-control" id="pyramidChooser" onchange="handlePyramidChooser()">
+                                    <option selected value="triangle">Triangle</option>
+                                    <option value="square">Square</option>
+                                    <option value="rectangle">Rectangle</option>
+                                </select>
+                            </div>  
+                        </div>
+                    </div>
+                    <div id="pyramidFormTriangle" class="row align-items-center justify-content-start">
+                        <div class="col-lg-6 col-xl-4">
+                            <img src="pyramid-triangle.png" class="img-fluid" />
+                            <div class="p-4">
+                                <h4>Formula = 1/3 * b * h</h4>                                
+                                <small class="text-muted"><em>Example = 1/3 * ((1/2) * (5 * 6)) * 10<br />Result = 50.000</em></small>
+                            </div>                            
+                        </div>
+                        <div class="col">
+                            <p class="mb-4">Use the fields provided to calculate the volume of a pyramid with a triangular base:</p>                             
+                            <div class="form-group">
+                                <label for="pTri_input_baseLength">Base Length</label>
+                                <input type="text" class="form-control" id="pTri_input_baseLength" />
+                            </div>
+                            <div class="form-group">
+                                <label for="pTri_input_baseHeight">Base Height</label>
+                                <input type="text" class="form-control" id="pTri_input_baseHeight" />
+                            </div>                    
+                            <div class="form-group">
+                                <label for="pTri_input_height">Perpendicular Height</label>
+                                <input type="text" class="form-control" id="pTri_input_height" />
+                            </div>  
+                            <input type="button" value="Submit" class="mt-3 btn btn-primary" onclick="handleSubmissionPyramidTriangle()" />   
+                            <div class="alert alert-info mt-3" id="pTri" style="display: none;"></div>                            
+                        </div>
+                    </div>  
+                    <div id="pyramidFormSquare" class="row align-items-center justify-content-start" style="display: none;">
+                        <div class="col-lg-6 col-xl-4">
+                            <img src="pyramid-square.png" class="img-fluid" />
+                            <div class="p-4">
+                                <h4>Formula = 1/3 * b * h</h4>
+                                <small class="text-muted"><em>Example = 1/3 * (5 * 5) * 10<br />Result = 83.333</em></small>
+                            </div>                            
+                        </div>
+                        <div class="col">
+                            <p class="mb-4">Use the fields provided to calculate the volume of a pyramid with a square base:</p>                             
+                            <div class="form-group">
+                                <label for="pSqu_input_baseLength">Base Length</label>
+                                <input type="text" class="form-control" id="pSqu_input_baseLength" />
+                            </div>                  
+                            <div class="form-group">
+                                <label for="pSqu_input_height">Perpendicular Height</label>
+                                <input type="text" class="form-control" id="pSqu_input_height" />
+                            </div>  
+                            <input type="button" value="Submit" class="mt-3 btn btn-primary" onclick="handleSubmissionPyramidSquare()" />                            
+                            <div class="alert alert-info mt-3" id="pSqu" style="display: none;"></div>
+                        </div>
+                    </div>  
+                    <div id="pyramidFormRectangle" class="row align-items-center justify-content-start" style="display: none;">
+                        <div class="col-lg-6 col-xl-4">
+                            <img src="pyramid-rectangle.jpg" class="img-fluid" />
+                            <div class="p-4">
+                                <h4>Formula = 1/3 * b * h</h4>
+                                <small class="text-muted"><em>Example = 1/3 * (10 * 6) * 15<br />Result = 300.000</em></small>
+                            </div>                            
+                        </div>
+                        <div class="col">
+                            <p class="mb-4">Use the fields provided to calculate the volume of a pyramid with a rectangular base:</p>                             
+                            <div class="form-group">
+                                <label for="pRect_input_baseLength">Base Length</label>
+                                <input type="text" class="form-control" id="pRect_input_baseLength" />
+                            </div>
+                            <div class="form-group">
+                                <label for="pRect_input_baseHeight">Base Height</label>
+                                <input type="text" class="form-control" id="pRect_input_baseHeight" />
+                            </div>                    
+                            <div class="form-group">
+                                <label for="pRect_input_height">Perpendicular Height</label>
+                                <input type="text" class="form-control" id="pRect_input_height" />
+                            </div>  
+                            <input type="button" value="Submit" class="mt-3 btn btn-primary" onclick="handleSubmissionPyramidRectangle()" />                        
+                            <div class="alert alert-info mt-3" id="pRect" style="display: none;"></div>
+                        </div>
+                    </div>                                                                                                                                                                           
+                </div>  
+            </div>            
+            
+        </div>  
+        <script src="scripts.js"></script>
+    </body>
+</html>

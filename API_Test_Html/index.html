@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src="scripts.js"></script>
+        <link rel="stylesheet" href="styles.css" />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>AJAX Data Table</title>
+    </head>
+    <body>
+
+        <!-- Visible while fetching data -->
+        <div id="loading" class="loading">
+            <div class="spinner-border" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+
+        <!-- Visible once data has been fetched -->
+        <div id="content" class="content" style="display: none;">
+            <h1>AJAX Data Table</h1>            
+            <div class="responsive-table">
+                <table id="products" class="table"></table>
+            </div>
+        </div>  
+
+    </body>
+</html>
