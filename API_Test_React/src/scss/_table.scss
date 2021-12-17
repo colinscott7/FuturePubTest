@@ -1,0 +1,43 @@
+.responsive-table {
+  width: 100%;
+  border-radius: 0.65rem;
+  overflow-x: auto;
+
+  .table {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+    border-spacing: 0;
+
+    th,
+    td {
+      padding: 1rem;
+      margin: 0;
+      border: 1px solid #c0c0c0;
+    }
+    th {
+      background-color: #e0e0e0;
+      color: #505050;
+
+      button {
+        background-color: transparent;
+        border: none;
+      }
+    }
+  }
+  .th-logo {
+    min-width: 200px;
+  }
+  .th-merchant {
+    min-width: 240px;
+  }
+  .th-product {
+    min-width: 280px;
+  }
+  .th-price {
+    min-width: 150px;
+  }
+  .th-currency {
+    min-width: 150px;
+  }
+}

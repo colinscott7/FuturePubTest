@@ -99,7 +99,8 @@ export const App = () => {
         <td>{offer.model}</td>
         <td>{offer.offer.price}</td>
         <td>
-          {offer.offer.currency_iso} ({offer.offer.currency_symbol})
+          {offer.offer.currency_iso} (
+          <span dangerouslySetInnerHTML={{ __html: offer.offer.currency_symbol }} />)
         </td>
         <td>
           <a href={offer.offer.link}>{offer.offer.merchant_link_text}</a>

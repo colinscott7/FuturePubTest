@@ -1,0 +1,27 @@
+body {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+  background: rgb(0, 73, 117);
+  background: linear-gradient(180deg, rgba(0, 73, 117, 1) 0%, rgba(0, 34, 55, 1) 100%);
+  font-size: 18px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+#root,
+.wrapper {
+  width: 100%;
+  height: 100%;
+}
+.content {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 1.33rem;
+  max-width: 75%;
+  margin: auto;
+  background-color: #f9f9f9;
+  border-radius: 1.33rem;
+}
